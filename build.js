@@ -5,19 +5,12 @@ var permalinks  = require('metalsmith-permalinks');
 var collections = require('metalsmith-collections');
 var watch = require('metalsmith-watch');
 
-const toUpper = function (string) {
-    return string.toUpperCase();
-};
-
-const spaceToDash = function (string) {
-    return string.replace(/\s+/g, "-");
-};
-
 const templateConfig = {
     engineOptions: {
         filters: {
-            toUpper: toUpper,
-            spaceToDash: spaceToDash
+            toUpper: s=> s.toUpperCase(),
+            spaceToDash: s => s.replace(/\s+/g, "-"),
+            link: path => path.split('.')[0]
         }
     },
     suppressNoFilesError: true
@@ -43,10 +36,6 @@ function simplePublished(opts){
         Object.keys(files).map((file)=>{
             var data = files[file];
             var pub = typeof data.published !== 'undefined' ? data.published : true;
-            console.log({
-                file,
-                q: typeof data.published !== 'undefined'
-            })
             if(!pub){
                 delete files[file];
             }
@@ -65,11 +54,11 @@ Metalsmith(__dirname)
     .source('./src')
     .destination('./dist')
     .clean(true)
-    .use(simplePublished())
-    .use(permalinks({ relative: true }))
     .use(collections({ posts: 'posts/*.md' }))
+    .use(simplePublished())
     .use(inplace(templateConfig))
     .use(layouts(templateConfig))
+    .use(permalinks())
     .use(maybeWatch())
     .build(function(err, files) {
         if (err) { throw err; }
