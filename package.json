@@ -2,11 +2,11 @@
   "name": "fullmetal",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "now-build": "node index.js",
-    "watch": "node index.js -w",
+    "now-build": "node build.js",
+    "watch": "node build.js -w",
     "start": "./node_modules/serve/bin/serve.js dist"
   },
   "author": "",
