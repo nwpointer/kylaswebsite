@@ -1,6 +1,6 @@
 ---
-title: My thirt Post
-published: true
+title: foo
+published: false
 ---
 
 
