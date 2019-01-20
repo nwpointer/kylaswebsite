@@ -1,6 +1,6 @@
 ---
 title: foo
-published: false
+published: true
 ---
 
 
