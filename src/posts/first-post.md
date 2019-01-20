@@ -1,6 +1,5 @@
 ---
 title: My First Post
-date: {}
 layout: post.njk
 published: true
 ---

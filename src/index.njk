@@ -10,6 +10,10 @@ filter_test: I should have dashes between words
 
 <h2>This is the Content</h2>
 
+{% for post in posts %}
+    {% include "layouts/partials/post.njk" %}
+{% endfor %}
+
 <p>This version uses metalsmith-layouts 2.1.0 and metalsmith-in-place 4.1.1</p>
 <p>{{ filter_test | spaceToDash }}</p>
 <p><em>{{ footnote | toUpper }}</em></p>
