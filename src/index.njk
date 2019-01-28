@@ -12,15 +12,18 @@ filter_test: I should have dashes between words
 published: true
 ---
 
-<h2>This is the Content!!!!</h2>
-
 {# {{collections | dump | safe}} #}
 
-{% for post in posts %}
-    {% include "layouts/partials/post.njk" %}
-    <br>
-{% endfor %}
 
-<p>This version uses metalsmith-layouts 2.1.0 and metalsmith-in-place 4.1.1</p>
-<p>{{ filter_test | spaceToDash }}</p>
-<p><em>{{ footnote | toUpper }}</em></p>
+<div class="col-lg-8 content">
+  <div id="content" class="latest-posts category-content">  
+    {% for post in posts %}
+        {% include "layouts/partials/post.njk" %}
+        <br>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="col-lg-4">
+  {% include "layouts/partials/sideBar.njk" %}
+</div>

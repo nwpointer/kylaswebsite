@@ -1,7 +1,24 @@
 {% extends "layout.njk" %}
 
+{% block header %}   
+  <header id="header" class="site_header_image cover-bg" data-image-src="/assets/img/header-image1.jpg">
+    <div class="container">
+        <div class="post-categories">
+            <a>post catagory</a>
+        </div>
+        <h1>
+          <a href="{{ path | link }}">
+              {{ path | title }}
+          </a>
+        </h1>
+        <div class="post-subtitle-container">
+            <div class="post-author">posted date</div>
+        </div>
+    </div>
+</header>
+{% endblock %}  
+
 {% block body %}
-  
   <section class="main-content">
     {{ contents | safe }}
   </section>

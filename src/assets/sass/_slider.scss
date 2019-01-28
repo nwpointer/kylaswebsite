@@ -1,0 +1,155 @@
+/* -------------------------------------------------------
+                   Slider
+-------------------------------------------------------- */
+
+@mixin ogato_col_slider($num) {
+
+  @for $i from 1 through $num {
+    .oagto-c-slider-#{$i} {
+      width: (100%/$i);
+      float: left;
+    }
+  }
+
+}
+
+#ogato_slider {
+  position: relative;
+
+  .ogato-main-c-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 80vh;
+
+    .ogato-overloy-img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+
+      .ogato-carousel{
+        position: absolute;
+        top: 10px;
+        left: 26px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+
+
+      .progress{
+        position: relative;
+        top: 49.3%;
+        height: 5px;
+        opacity: .7;
+        @include transition(.5);
+      }
+
+    }
+
+    @include ogato_col_slider(12);
+
+    .ogato {
+      height: 50%;
+
+      &.oagto-c-slider-1 {
+        border-bottom: 4px solid rgba(255, 255, 255, 0.5019607843137255);
+
+        &.ogato-active {
+          .ogato-item-content {
+            margin-top: 100px;
+            opacity: 1;
+            display: block;
+
+
+          }
+        }
+
+      }
+
+      &.oagto-c-slider-3 , &.oagto-c-slider-2 {
+
+        &.ogato-active {
+          .ogato-item-content {
+            margin-top: -27px;
+            opacity: 1;
+            display: block;
+
+          }
+        }
+
+      }
+
+      &.oagto-c-slider-2 {
+        border-right: 4px solid rgba(255, 255, 255, 0.5019607843137255);
+      }
+
+      &.oagto-c-slider-3 {
+        border-right: 4px solid rgba(255, 255, 255, 0.5019607843137255);
+      }
+
+      .ogato-item {
+        height: 100%;
+        opacity: 0;
+      }
+
+      .ogato-item-content {
+        position: relative;
+        display: none;
+        margin:  0 30px;
+        color: #fff;
+        @include transition(.3s);
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-name: slideInUp;
+        animation-name: slideInUp;
+
+        opacity: 0;
+        h3 {
+          color: #fff;
+          opacity: .8;
+          font-size: 20px;
+          text-transform: uppercase;
+          @include transition(.3s);
+          &:before {
+            content: '';
+            position: absolute;
+            margin-top: 25px;
+            width: 50px;
+            height: 2px;
+            background-color: #fff;
+          }
+        }
+
+        a {
+          overflow: hidden;
+          display: inline-block;
+
+          border: 1px solid #fff;
+          margin-top: 10px;
+          border-radius: 10px;
+          padding: 10px 20px;
+          text-transform: uppercase;
+          opacity: 1;
+          letter-spacing: 1px;
+          font-size: 13px;
+          @include transition(.5s);
+
+          &:hover {
+            background-color: #fff;
+            color: #212121;
+          }
+        }
+
+      }
+    }
+
+  }
+
+}

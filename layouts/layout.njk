@@ -1,19 +1,73 @@
 <!DOCTYPE html>
+<html lang="en-US">
 <html>
   <head>
-    <title>{{ title }}</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="discrption" content="parallax one page">
+    <meta name="keyword" content="agency, business, corporate, creative, freelancer, interior, joomla template, K2 Blog, minimal, modern, multipurpose, personal, portfolio, responsive, simple">
+
+    <!-- Template Title -->
+    <title>{{title}}</title>
+
+    <!-- Font Google -->
+    <link href="https://fonts.googleapis.com/css?family=Marcellus" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant:400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=KoHo:300,400,600" rel="stylesheet">
+
+    <!-- custom styles (optional) -->
+    <link href="/assets/css/plugins.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+    <style>
+        #content_full .latest-posts {
+            position: relative;
+            overflow: visible;
+        }
+        .disclaimer{
+            opacity:0.2 !important
+        }
+    </style>
   </head>
   <body>
-    {% block header %}   
-      {% include "partials/header.njk" %}
-    {% endblock %}  
+    {% include "partials/navSidebar.njk" %}
 
-    {% block body %}   
-      This is the default contents
-    {% endblock %}
+    <main id="mainContent">
+      <div class="sidebar-overlay"></div>
 
-    {% block footer %} 
-      {% include "partials/footer.njk" %}
-    {% endblock %}
+      {% include "partials/navBar.njk" %}
+    
+      {% block header %}   
+        {% include "partials/header.njk" %}
+      {% endblock %}  
+
+      <div id="content_full" class="section-padding">
+        <div class="container">
+          <div class="row sticky-container">
+            {% block body %}   
+              This is the default contents
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+      
+      {% block footer %} 
+        {% include "partials/footer.njk" %}
+      {% endblock %}
+
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/assets/js/jquery-3.1.1.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/owl.carousel.min.js"></script>
+    <script src="/assets/js/TweenMax.min.js"></script>
+    <script src="/assets/js/sticky-sidebar.min.js"></script>
+    <script src="/assets/js/youtubepopup.jquery.js"></script>
+    <!-- custom JavaScript -->
+    <script src="/assets/js/custom.js"></script>
   </body>
 </html>

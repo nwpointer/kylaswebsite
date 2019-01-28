@@ -1,0 +1,36 @@
+/*-----------------------------------------------------------------------------------
+
+	Template Name: Ogato
+	Template URI: http://theme.dsngrid.com/ogato
+	Description: Ogato - Personal Blog template
+	Author: design_grid
+	Author URI: https://themeforest.net/user/design_grid
+	Version: 1.0
+
+-----------------------------------------------------------------------------------*/
+
+/* ----------------------------------------------------------------
+			[ All Css Plugins & Helper Classes File ]
+-----------------------------------------------------------------*/
+
+/* == bootstrap == */
+@import url("plugins/bootstrap.min.css");
+
+/* == fontawesome == */
+@import url("plugins/fontawesome-all.min.css");
+
+/* == jam icons == */
+@import url("plugins/jam-icons.min.css");
+
+/* == owl carousel == */
+@import url("plugins/owl.carousel.min.css");
+@import url("plugins/owl.theme.default.min.css");
+
+/* == fancybox == */
+@import url("plugins/jquery.fancybox.min.css");
+
+/* == animate == */
+@import url("plugins/animate.css");
+
+/* == YouTubePopUp == */
+@import url("plugins/YouTubePopUp.css");

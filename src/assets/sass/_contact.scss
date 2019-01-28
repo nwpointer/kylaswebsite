@@ -1,0 +1,93 @@
+  /* -------------------------------------------------------
+                     Contact
+  -------------------------------------------------------- */
+.contact {
+    position: relative;
+    background-color: $bg-light;
+
+    .contact-info {
+        position: relative;
+
+        .info-item {
+            position: relative;
+            height: 100%;
+            border-right: 1px solid #eee;
+
+            .icon {
+                position: relative;
+                margin-bottom: 15px;
+                
+                span {
+                    font-size: 35px;
+                }
+            }
+        }
+
+        .info-item-last {
+            border: none;
+        }
+    }
+
+    .contact-form {
+        background-color: $bg-light;
+        padding-bottom: 0 !important;
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .help-block {
+            li {
+            color: red;
+            font-size: 12px;
+            }
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #000;
+            font-style: 18px;
+            font-weight: 600;
+        }
+    
+        input, textarea {
+            background: transparent;
+            padding: 10px 15px;
+            border-radius: 0;
+            width: 100%;
+            border: transparent;
+            border: 1px solid rgba(156, 156, 156, 0.17);
+            margin-bottom: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+    
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            max-height: 120px;
+        }
+
+        button {
+            text-transform: uppercase;
+            font-weight: 600;
+            background-color: #fd4145;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            -webkit-transition: -webkit-box-shadow 0.15s linear;
+            transition: -webkit-box-shadow 0.15s linear;
+            -o-transition: box-shadow 0.15s linear;
+            transition: box-shadow 0.15s linear;
+            transition: box-shadow 0.15s linear, -webkit-box-shadow 0.15s linear;
+
+            &:hover {
+                webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+                box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+            }
+        }
+    }
+}
